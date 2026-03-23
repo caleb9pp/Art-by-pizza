@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesion | Art By Pizza</title>
+    <meta name="autor" content="Codex">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700;900&family=Manrope:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="view\css\style_login.css">
+    <script src="https://kit.fontawesome.com/84043910c2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="abp_header">
+        <img src="view\img\1.png" alt="pizza">
+        <h1>Art By Pizza</h1>
+        <div class="clear fix"></div>
+        <nav>
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i> Inicio
+            </a>
+            <a href="menu.html">
+                <i class="fa-solid fa-pizza-slice"></i> Menu
+            </a>
+            <a href="login.html">
+                <i class="fa-solid fa-user"></i> Iniciar sesion
+            </a>
+        </nav>
+    </header>
+
+    <main class="abp_login">
+        <section class="abp_login__hero">
+            <div class="abp_login__intro">
+                <p class="abp_login__eyebrow">Acceso a clientes</p>
+                <h2 class="abp_login__title">Inicia sesion y prepara tu siguiente pedido</h2>
+                <p class="abp_login__text">Accede a tu cuenta para continuar con tus compras, consultar tus sabores favoritos y ordenar mas rapido.</p>
+                <ul class="abp_login__features">
+                    <li>Confirma tus datos antes de ordenar</li>
+                    <li>Recupera tu historial de compras</li>
+                    <li>Continua con un proceso mas rapido y claro</li>
+                </ul>
+            </div>
+
+            <div class="abp_login__card">
+                <div class="abp_login__card-header">
+                    <p class="abp_login__tag">Formulario</p>
+                    <h3>Bienvenido de nuevo</h3>
+                    <p>Completa los campos obligatorios para entrar.</p>
+                </div>
+
+                <form class="abp_form" id="loginForm" novalidate>
+                    <div class="abp_form__group">
+                        <label for="correo">Correo electronico</label>
+                        <input type="email" id="correo" name="correo" placeholder="cliente@artbypizza.com" required>
+                        <small class="abp_form__error" data-error-for="correo"></small>
+                    </div>
+
+                    <div class="abp_form__group">
+                        <label for="password">Contrasena</label>
+                        <input type="password" id="password" name="password" placeholder="Ingresa tu contrasena" minlength="8" required>
+                        <small class="abp_form__error" data-error-for="password"></small>
+                    </div>
+
+                    <div class="abp_form__options">
+                        <label class="abp_checkbox" for="recordarme">
+                            <input type="checkbox" id="recordarme" name="recordarme">
+                            <span>Recordarme en este equipo</span>
+                        </label>
+                        <a href="menu.html">Volver al menu</a>
+                    </div>
+
+                    <button class="abp_form__submit" type="submit">Entrar a mi cuenta</button>
+                    <p class="abp_form__status" id="formStatus" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="abp_footer">
+        <div class="abp_footer__content">
+            <div class="abp_footer__info">
+                <p>Derechos reservados a Art By Pizza ® </p>
+                <p>Telefono: 5571473717</p>
+                <p>Equipo: DevFlow</p>
+                <p>Direccion: Reforma Agraria 22, Ejidos de San Agustin, 57800 Cdad. Nezaualcoyotl, Mex.</p>
+            </div>
+            <div class="abp_footer__social">
+                <a href="#" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById("loginForm");
+        const status = document.getElementById("formStatus");
+        const fields = {
+            correo: {
+                input: document.getElementById("correo"),
+                error: document.querySelector('[data-error-for="correo"]'),
+                validate(value) {
+                    if (!value.trim()) {
+                        return "El correo electronico es obligatorio.";
+                    }
+
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(value.trim())) {
+                        return "Ingresa un correo electronico valido.";
+                    }
+
+                    return "";
+                }
+            },
+            password: {
+                input: document.getElementById("password"),
+                error: document.querySelector('[data-error-for="password"]'),
+                validate(value) {
+                    if (!value.trim()) {
+                        return "La contrasena es obligatoria.";
+                    }
+
+                    if (value.trim().length < 8) {
+                        return "La contrasena debe tener al menos 8 caracteres.";
+                    }
+
+                    return "";
+                }
+            }
+        };
+
+        function showError(fieldName, message) {
+            const field = fields[fieldName];
+            field.error.textContent = message;
+            field.input.classList.toggle("abp_input--invalid", Boolean(message));
+        }
+
+        function validateField(fieldName) {
+            const field = fields[fieldName];
+            const message = field.validate(field.input.value);
+            showError(fieldName, message);
+            return !message;
+        }
+
+        Object.keys(fields).forEach((fieldName) => {
+            fields[fieldName].input.addEventListener("input", () => {
+                validateField(fieldName);
+                status.textContent = "";
+                status.classList.remove("is-success");
+            });
+        });
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const isValid = Object.keys(fields).every(validateField);
+
+            if (!isValid) {
+                status.textContent = "Revisa los campos marcados antes de continuar.";
+                status.classList.remove("is-success");
+                return;
+            }
+
+            status.textContent = "Formulario valido. Inicio de sesion listo para procesarse.";
+            status.classList.add("is-success");
+            form.reset();
+            Object.keys(fields).forEach((fieldName) => showError(fieldName, ""));
+        });
+    </script>
+</body>
+</html>
