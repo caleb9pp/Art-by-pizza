@@ -1,0 +1,410 @@
+﻿*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box; /*permite calcular los tamaños, altura y ancho*/
+}
+
+body{
+    font-family: "Manrope", sans-serif;
+    background: radial-gradient(1200px 500px at 10% 10%, #FFE0B2 0%, #FFF3E0 45%, #FFFFFF 100%);
+    color: #1F1F1F;
+}
+
+.abp_main{
+    padding: 60px 7vw 90px;
+}
+
+.abp_catalogo{
+    margin-top: 56px;
+}
+
+.abp_title{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.abp_title h2{
+    font-family: "Fraunces", serif;
+    color: #C62828;
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.abp_title p{
+    color: #4a4a4a;
+    font-size: 1.1rem;
+}
+
+.abp_header{
+    max-width: 100%;
+    background-color: #C62828;
+    overflow: hidden;
+}
+
+.abp_header nav {
+    display: flex;           /* Activa flexbox para poner todo en una sola línea */
+    justify-content: center; /* Centra los enlaces en la pantalla */
+    gap: 50px;               /* Agrega una separación limpia entre cada opción */
+    padding: 20px 0;         /* Da un poco de espacio arriba y abajo */
+    background-color: #FFF3E0; /* Un fondo ligeramente más oscuro para separarlo del logo */
+    clear: both;             /* Asegura que el menú quede debajo del logo y el título */
+}
+
+/* Aplicar estilos CSS al menú (Tarea 11) */
+.abp_header nav a {
+    text-decoration: none;   /* Quita el molesto subrayado por defecto */
+    color: #1F1F1F;     /* Quita el color azul y los pone claros para que resalten */
+    font-family: 'Segoe UI', Verdana, Geneva, Tahoma, sans-serif; /* Misma tipografía del título */
+    font-size: 1.2vw;       /* Tamaño de letra un poco más grande */
+    font-weight: 600;        /* Hace la letra un poco más gordita/negrita */
+    
+    /* Centrar los íconos con el texto */
+    display: flex;
+    align-items: center;
+    gap: 8px;               /* Separación entre el ícono de la casita/pizza y el texto */
+    padding: 8px;
+    transition: all 0.3s ease;
+    border-radius: 16px; /* Hace que el efecto hover se vea fluido y no de golpe */
+}
+
+/* Configurar efecto hover (Tarea 12) */
+.abp_header nav a:hover {
+    color: #FFFFFF;  /* Cambia al color blanco de la paleta al pasar el mouse */
+    transform: translateY(-3px);
+    background-color: #C62828;
+    border-radius: 16px;
+}
+
+.abp_header img{
+    width: 10%;
+    float: left;
+    margin-top: 1%; 
+}
+
+.abp_header h1{
+    font-family: 'Playfair Display', 'Georgia', serif; 
+    font-size: 6vw;
+    color: #FFFFFF;
+    text-align: left;
+    font-weight: 400; /* Un peso visual ligero se ve más refinado */
+    letter-spacing: 2px; /* Un poco de aire entre las letras */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra difuminada para que el blanco no se pierda si hay una imagen de fondo */
+    margin-right: 5%; /* Un pequeño margen para que no quede totalmente pegado al borde derecho */
+}
+
+.hero{
+    display: grid;
+    grid-template-columns: minmax(240px, 1fr) minmax(280px, 1.2fr);
+    gap: 50px;
+    align-items: center;
+    padding: 48px 5vw;
+    border-radius: 32px;
+    background: linear-gradient(120deg, #FFF3E0CC, #FFE0B266);
+    box-shadow: 0 30px 80px #1F1F1F33;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before{
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, #F57C0099, #F57C0000);
+    top: -120px;
+    right: -80px;
+    filter: blur(10px);
+}
+
+.hero::after{
+    content: "";
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle, #C6282873, #C6282800);
+    bottom: -120px;
+    left: -80px;
+    filter: blur(8px);
+}
+
+.hero__media{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero__frame{
+    width: min(360px, 80%);
+    aspect-ratio: 4 / 5;
+    background: linear-gradient(165deg, #FFE0B2, #FFC107 45%, #E53935 100%);
+    border-radius: 36px;
+    padding: 14px;
+    box-shadow: 0 20px 50px #1F1F1F4D;
+    transform: rotate(-2deg);
+}
+
+.hero__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 28px;
+    background-color: #1F1F1F;
+}
+
+.hero__content{
+    position: relative;
+    z-index: 1;
+}
+
+.hero__eyebrow{
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-size: 0.75rem;
+    color: #F57C00;
+    margin-bottom: 18px;
+}
+
+.hero__title{
+    font-family: "Fraunces", serif;
+    font-size: clamp(2.4rem, 3.6vw, 4rem);
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 16px;
+    color: #1F1F1F;
+}
+
+.hero__sub{
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #1F1F1F;
+    margin-bottom: 28px;
+    max-width: 520px;
+}
+
+.hero__btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 34px;
+    border-radius: 999px;
+    background: #E53935;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    box-shadow: 0 12px 30px #F57C0066;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.hero__btn:hover{
+    transform: translateY(-2px);
+    background: #E53935;
+    box-shadow: 0 16px 36px #E5393566;
+}
+
+
+/*Ajustes del contenedor y alineacion de imagenes */
+.abp_container{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(240px, 1fr));
+    gap: 32px;
+}
+/*bordes, curvas y sombras de los border */
+.abp_galery{
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    background: #FFFFFF;
+    box-shadow: 0 16px 32px #E5393533;
+}
+
+#img1{
+    padding: 30px;
+}
+
+
+/*Tamaño de imagen*/
+.abp_galery img{
+width: 100%;
+height: auto;
+padding: 0;
+display: block;
+border-radius: 14px;
+}
+
+/*Configuracion de la tipografica*/
+
+.abp_descripcion p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1vw;
+    text-align: left;
+    text-decoration-color: #0c0c0c;
+    line-height: 1.5;
+}
+
+/* .abp_descripcion p + p{
+    margin-top: 6px;
+} */
+
+#abp_card-title{
+    font-weight: 700;
+    font-size: 1.3vw;
+    color: #E53935;
+    margin-bottom: 2%;
+    font-weight: 900;
+}
+
+.abp_price-row{
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.abp_price{
+    margin-top: 2%;
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: #C62828;
+}
+
+.abp_weight{
+    font-size: 0.95rem;
+    color: #6b6b6b;
+    font-weight: 600;
+}
+
+.abp_btn{
+    display: inline-block;
+    margin-top: 12px;
+    padding: 12px 24px;
+    border-radius: 12px;
+    background: #C62828;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+}
+
+.abp_btn:hover{
+    background: #B71C1C;
+}
+
+.abp_footer{
+    margin-top: 72px;
+    padding: 28px 7vw 24px;
+    background: linear-gradient(135deg, #8E1B1B 0%, #C62828 55%, #E53935 100%);
+    color: #FFFFFF;
+}
+
+.abp_footer__content{
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 28px;
+}
+
+.abp_footer__info{
+    max-width: 760px;
+}
+
+.abp_footer__info p{
+    margin-bottom: 10px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.abp_footer__info p:last-child{
+    margin-bottom: 0;
+}
+
+.abp_footer__social{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 14px;
+}
+
+.abp_footer__social a{
+    width: 46px;
+    height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #FFF3E0;
+    color: #C62828;
+    text-decoration: none;
+    font-size: 1.25rem;
+    box-shadow: 0 10px 24px #1F1F1F33;
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.abp_footer__social a:hover{
+    transform: translateY(-3px);
+    background-color: #FFC107;
+    color: #8E1B1B;
+}
+
+@media (max-width: 900px){
+    .abp_container{
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+    }
+
+    .abp_footer__content{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .abp_footer__social{
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 640px){
+    .abp_main{
+        padding: 36px 5vw 64px;
+    }
+
+    .abp_catalogo{
+        margin-top: 40px;
+    }
+
+    .abp_container{
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .abp_galery{
+        padding: 16px;
+    }
+
+    .abp_footer{
+        padding: 24px 6vw 20px;
+        margin-top: 48px;
+    }
+
+    .abp_footer__info p{
+        font-size: 0.95rem;
+    }
+
+    .abp_footer__social{
+        gap: 10px;
+    }
+
+    .abp_footer__social a{
+        width: 42px;
+        height: 42px;
+    }
+}
+
+
+
+
+
