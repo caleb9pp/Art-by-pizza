@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="view" content="width=device-width, intial-scale=1.0">
+    <title>Carrito | Art By Pizza</title>
+    <meta name="autor" content="Codex">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700;900&family=Manrope:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="view\css\style_cart.css">
+    <script src="https://kit.fontawesome.com/84043910c2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="abp_header">
+        <img src="view\img\1.png" alt="pizza">
+        <h1>Art By Pizza</h1>
+        <div class="clear fix"></div>
+        <nav>
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i> Inicio
+            </a>
+            <a href="menu.html">
+                <i class="fa-solid fa-pizza-slice"></i> Menu
+            </a>
+    <a href="carrito.html" class="abp_nav-cart">
+                <i class="fa-solid fa-cart-shopping"></i> Carrito
+                <span class="abp_cart-count" aria-live="polite">0</span>
+            </a>
+    <a href="login.html">
+                <i class="fa-solid fa-user"></i> Iniciar sesion
+            </a>
+        </nav>
+    </header>
+
+    <main class="abp_cart" data-cart-page>
+        <section class="abp_cart__hero">
+            <div>
+                <p class="abp_cart__eyebrow">Carrito de compras</p>
+                <h2 class="abp_cart__title">Tu pedido esta casi listo</h2>
+                <p class="abp_cart__text">Ajusta cantidades, elimina productos y confirma tu pedido cuando todo este perfecto.</p>
+            </div>
+            <div class="abp_cart__hero-card">
+                <p>Productos seleccionados: <span data-cart-count>0</span></p>
+                <p>Subtotal actual: <span data-cart-subtotal>$0</span></p>
+                <a class="abp_btn abp_btn--ghost" href="menu.html">Seguir explorando</a>
+            </div>
+        </section>
+
+        <section class="abp_cart__layout">
+            <div class="abp_cart__items-wrap">
+                <div class="abp_cart__items" id="cartItems"></div>
+                <div class="abp_cart__empty" id="cartEmpty" hidden>
+                    <h3>Tu carrito esta vacio</h3>
+                    <p>Explora el menu para agregar tus pizzas favoritas.</p>
+                    <a class="abp_btn" href="menu.html">Ir al menu</a>
+                </div>
+            </div>
+
+            <aside class="abp_cart__summary">
+                <h3>Resumen</h3>
+                <div class="abp_cart__summary-row">
+                    <span>Subtotal</span>
+                    <span data-cart-subtotal>$0</span>
+                </div>
+                <div class="abp_cart__summary-row">
+                    <span>Total</span>
+                    <span class="abp_cart__summary-total" data-cart-total>$0</span>
+                </div>
+                <div class="abp_cart__actions">
+                    <button class="abp_btn" type="button">Continuar con el pedido</button>
+                    <button class="abp_btn abp_btn--outline" type="button" id="cartClear">Vaciar carrito</button>
+                </div>
+            </aside>
+        </section>
+    </main>
+
+    <footer class="abp_footer">
+        <div class="abp_footer__content">
+            <div class="abp_footer__info">
+                <p>Derechos reservados a Art By Pizza  </p>
+                <p>Telefono: 5571473717</p>
+                <p>Equipo: DevFlow</p>
+                <p>Direccion: Reforma Agraria 22, Ejidos de San Agustin, 57800 Cdad. Nezaualcoyotl, Mex.</p>
+            </div>
+            <div class="abp_footer__social">
+                <a href="#" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="view/js/cart.js"></script>
+</body>
+</html>
+
