@@ -21,7 +21,11 @@
             <a href="menu.html">
                 <i class="fa-solid fa-pizza-slice"></i> Menu
             </a>
-            <a href="login.html">
+    <a href="carrito.html" class="abp_nav-cart">
+        <i class="fa-solid fa-cart-shopping"></i> Carrito
+        <span class="abp_cart-count" aria-live="polite">0</span>
+    </a>
+    <a href="login.html">
                 <i class="fa-solid fa-user"></i> Iniciar sesion
             </a>
         </nav>
@@ -175,5 +179,9 @@
             Object.keys(fields).forEach((fieldName) => showError(fieldName, ""));
         });
     </script>
+    <script src="view/js/cart.js"></script>
 </body>
 </html>
+
+
+

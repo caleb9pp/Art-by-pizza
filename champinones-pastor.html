@@ -21,7 +21,11 @@
             <a href="menu.html">
                 <i class="fa-solid fa-pizza-slice"></i> Menu
             </a>
-            <a href="login.html">
+    <a href="carrito.html" class="abp_nav-cart">
+        <i class="fa-solid fa-cart-shopping"></i> Carrito
+        <span class="abp_cart-count" aria-live="polite">0</span>
+    </a>
+    <a href="login.html">
                 <i class="fa-solid fa-user"></i> Iniciar sesion
             </a>
         </nav>
@@ -40,7 +44,7 @@
                 </figure>
                 <div class="abp_product__cta">
                     <span class="abp_product__price">$250</span>
-                    <a class="abp_btn"  onclick="alert('En Construccion')">Agregar al carrito</a>
+                    <button class="abp_btn abp_add-to-cart" type="button" data-id="champinones-pastor" data-name="Champiñones con Pastor" data-price="250" data-img="view/img/pizzachampinones.png">Agregar al carrito</button>
                 </div>
             </div>
 
@@ -98,5 +102,9 @@
             </div>
         </div>
     </footer>
+    <script src="view/js/cart.js"></script>
 </body>
 </html>
+
+
+
