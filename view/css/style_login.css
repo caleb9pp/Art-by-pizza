@@ -49,6 +49,25 @@ body{
     border-radius: 16px;
 }
 
+.abp_nav-cart{
+    position: relative;
+}
+
+.abp_cart-count{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    border-radius: 999px;
+    background: var(--abp-red-strong);
+    color: #FFFFFF;
+    font-size: 0.75rem;
+    font-weight: 700;
+    box-shadow: 0 8px 18px #E5393566;
+}
+
 .abp_header nav a:hover{
     color: #FFFFFF;
     transform: translateY(-3px);

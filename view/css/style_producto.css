@@ -49,6 +49,25 @@ body{
     border-radius: 16px;
 }
 
+.abp_nav-cart{
+    position: relative;
+}
+
+.abp_cart-count{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 6px;
+    border-radius: 999px;
+    background: var(--abp-red-strong);
+    color: #FFFFFF;
+    font-size: 0.75rem;
+    font-weight: 700;
+    box-shadow: 0 8px 18px #E5393566;
+}
+
 .abp_header nav a:hover{
     color: #FFFFFF;
     transform: translateY(-3px);
@@ -159,6 +178,13 @@ body{
     letter-spacing: 0.02em;
     box-shadow: 0 12px 30px #F57C0066;
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.abp_btn--added{
+    background: var(--abp-orange);
+    box-shadow: 0 16px 36px #F57C0066;
 }
 
 .abp_btn:hover{
@@ -333,6 +359,18 @@ body{
 
     .abp_option-grid{
         grid-template-columns: repeat(2, minmax(140px, 1fr));
+    }
+}
+
+@media (max-width: 760px){
+    .abp_header nav{
+        gap: 18px;
+        padding: 16px 12px;
+        flex-wrap: wrap;
+    }
+
+    .abp_header nav a{
+        font-size: 0.95rem;
     }
 }
 
